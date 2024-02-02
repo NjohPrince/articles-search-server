@@ -21,7 +21,7 @@ class SearchController {
       const search = req.body as SearchType
       const clientIP = req.clientIP || ''
 
-      SearchValidationSchema.parse({ search, clientIP })
+      SearchValidationSchema.parse({ search: search.search, clientIP })
 
       const existingSearch = await searchService.getSearchByName(search.search)
 

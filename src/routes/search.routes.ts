@@ -5,6 +5,6 @@ import searchController from '../controllers/search.controller'
 const router = express.Router()
 
 router.post('/searches', searchController.captureIPAddress, searchController.saveSearch)
-router.get('/searches', searchController.getAllSearches)
+router.get('/searches', searchController.captureIPAddress, searchController.getAllSearches)
 
 export default router
